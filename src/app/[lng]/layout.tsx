@@ -1,4 +1,9 @@
+'use client'
+
 import { ReactNode } from 'react'
+import GlobalStyles from '@/styles/globals'
+import StyledComponentsRegistry from '@/lib/registry'
+// eslint-disable-next-line camelcase
 import { DM_Sans } from 'next/font/google'
 
 const dmSans = DM_Sans({
@@ -16,7 +21,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={dmSans.className}>{children}</body>
+      <body className={dmSans.className} suppressHydrationWarning={true}>
+        <GlobalStyles />
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      </body>
     </html>
   )
 }
