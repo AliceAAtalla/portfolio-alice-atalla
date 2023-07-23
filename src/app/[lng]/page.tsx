@@ -1,5 +1,7 @@
+import { getMainPageData } from '@/api/getMainPageData'
 import { getNavbarInfo } from '@/api/getNavbarInfo'
 import Header from '@/components/Header'
+import SectionIntroduction from '@/components/Sections/SectionIntroduction'
 
 type Params = {
   params: {
@@ -8,13 +10,14 @@ type Params = {
 }
 
 export default async function Home({ params: { lng } }: Params) {
-  const { navbar } = await getNavbarInfo(lng)
+  const navbarInfo = await getNavbarInfo(lng)
+  const mainPageData = await getMainPageData(lng)
 
   return (
     <>
-      <Header data={navbar} locale={lng} />
+      <Header data={navbarInfo?.navbar} locale={lng} />
       <main>
-        <h1>Hello</h1>
+        <SectionIntroduction mainPageContent={mainPageData?.mainPage} />
       </main>
     </>
   )
