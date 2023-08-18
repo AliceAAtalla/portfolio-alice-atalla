@@ -26,6 +26,12 @@ export type Technologies = {
   iconSvg: string
 }
 
+export type Capabilities = {
+  image: string
+  title: string
+  description: string
+}
+
 export type Specialties = {
   image: string
   title: string
@@ -51,6 +57,8 @@ export type MainPageInfo = {
   }
   specialtieTitle: string
   specialties: [Specialties]
+  capabilitiesTitle: string
+  capabilities: [Capabilities]
 }
 
 export type MainPageData = {

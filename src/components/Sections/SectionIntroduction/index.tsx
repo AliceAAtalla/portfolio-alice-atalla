@@ -40,9 +40,11 @@ const SectionIntroduction = ({ mainPageContent }: SectionIntroductionProp) => {
           <Styled.Bold>{name}</Styled.Bold>
         </Styled.H1>
         <Styled.H2>{career}.</Styled.H2>
-        <Styled.Content>
-          <RichText content={introduction.raw} />
-        </Styled.Content>
+        {introduction?.raw ? (
+          <Styled.Content>
+            <RichText content={introduction.raw} />
+          </Styled.Content>
+        ) : null}
         <Styled.ContainerLinks>
           {socials?.map((social) => (
             <Link key={social.name} href={social.url} passHref>
@@ -82,8 +84,8 @@ const SectionIntroduction = ({ mainPageContent }: SectionIntroductionProp) => {
           alt="Image"
           src={
             isMediumDevice
-              ? profilePictureMobile.url
-              : profilePictureDesktop.url
+              ? profilePictureMobile?.url
+              : profilePictureDesktop?.url
           }
         />
       </Styled.WrapperImage>

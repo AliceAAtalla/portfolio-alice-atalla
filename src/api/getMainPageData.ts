@@ -36,6 +36,12 @@ export const getMainPageData = async (
           title
           description
         }
+        capabilitiesTitle
+        capabilities {
+          image
+          title
+          description
+        }
       }
     }
   `

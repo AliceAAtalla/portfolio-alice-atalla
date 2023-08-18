@@ -5,18 +5,18 @@ import Title from '@/components/Title'
 import { MainPageInfo } from '@/types/page-info'
 import { CMSIcon } from '@/components/CMSIcon'
 
-type SectionSpecialitiesProp = {
+type SectionCapabilitiesProp = {
   mainPageContent: MainPageInfo
 }
 
-const SectionSpecialities = ({ mainPageContent }: SectionSpecialitiesProp) => {
-  const { specialties, specialtieTitle } = mainPageContent
+const SectionCapabilities = ({ mainPageContent }: SectionCapabilitiesProp) => {
+  const { capabilities, capabilitiesTitle } = mainPageContent
 
   return (
     <Styled.Wrapper>
-      <Title>{specialtieTitle}</Title>
+      <Title>{capabilitiesTitle}</Title>
       <Styled.WrapperCard>
-        {specialties.map(({ title, description, image }) => (
+        {capabilities.map(({ title, description, image }) => (
           <Styled.Card key={title}>
             <CMSIcon icon={image} width={'150'} height={'150'} />
             <Styled.WrapperText>
@@ -30,4 +30,4 @@ const SectionSpecialities = ({ mainPageContent }: SectionSpecialitiesProp) => {
   )
 }
 
-export default SectionSpecialities
+export default SectionCapabilities
