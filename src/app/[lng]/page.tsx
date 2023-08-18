@@ -2,6 +2,7 @@ import { getMainPageData } from '@/api/getMainPageData'
 import { getNavbarInfo } from '@/api/getNavbarInfo'
 import Header from '@/components/Header'
 import SectionIntroduction from '@/components/Sections/SectionIntroduction'
+import SectionSpecialities from '@/components/Sections/SectionSpecialities'
 
 type Params = {
   params: {
@@ -18,6 +19,7 @@ export default async function Home({ params: { lng } }: Params) {
       <Header data={navbarInfo?.navbar} locale={lng} />
       <main>
         <SectionIntroduction mainPageContent={mainPageData?.mainPage} />
+        <SectionSpecialities mainPageContent={mainPageData?.mainPage} />
       </main>
     </>
   )

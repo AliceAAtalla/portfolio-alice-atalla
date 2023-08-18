@@ -62,10 +62,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   main {
-    padding: 16rem ${tokens.spacing5xl} 0;
+    padding: 14rem ${tokens.spacing5xl} 0;
     
     @media screen and (max-width: ${tokens.breakpointXxl}) {
-      padding: 16rem ${tokens.spacing2xl} 0;
+      padding: 10rem ${tokens.spacing2xl} 0;
     }
 
     @media screen and (max-width: ${tokens.breakpointLg}) {

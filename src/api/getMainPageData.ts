@@ -30,6 +30,12 @@ export const getMainPageData = async (
           name
           iconSvg
         }
+        specialtieTitle
+        specialties {
+          image
+          title
+          description
+        }
       }
     }
   `
