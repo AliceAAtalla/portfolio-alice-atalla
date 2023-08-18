@@ -1,9 +1,17 @@
+import { ReactNode } from 'react'
 import * as Styled from './style'
 
-const Button = ({ kind, text, handleClickButton, children }) => {
+type ButtonProp = {
+  text: ''
+  kind: 'primary' | ''
+  handleClickButton: () => void
+  children: ReactNode
+}
+
+const Button = ({ kind, text, handleClickButton, children }: ButtonProp) => {
   return (
     <Styled.Button onClick={handleClickButton}>
-      <Styled.Text kind={kind} hasIcon={!!children}>
+      <Styled.Text $hasIcon={!!children} $kind={kind}>
         {text}
       </Styled.Text>
       {children}

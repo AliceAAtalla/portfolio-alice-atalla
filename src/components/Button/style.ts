@@ -12,12 +12,13 @@ export const Button = styled.button`
   height: fit-content;
 `
 
-export const Text = styled.span`
+export const Text = styled.span<{ $hasIcon: boolean; $kind: 'primary' | '' }>`
   display: flex;
   align-items: center;
   font-weight: 700;
   font-size: 16px;
   width: max-content;
-  margin-right: ${({ hasIcon }) => (hasIcon ? '0.5rem' : 0)};
-  color: ${({ kind }) => (kind === 'primary' ? tokens.colorNeutralWhite : '')};
+  margin-right: ${({ $hasIcon }) => ($hasIcon ? '0.5rem' : 0)};
+  color: ${({ $kind }) =>
+    $kind === 'primary' ? tokens.colorNeutralWhite : ''};
 `
