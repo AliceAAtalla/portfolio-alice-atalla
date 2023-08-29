@@ -1,5 +1,6 @@
 import { getMainPageData } from '@/api/getMainPageData'
 import { getNavbarInfo } from '@/api/getNavbarInfo'
+import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import SectionAbout from '@/components/Sections/SectionAbout'
 import SectionCapabilities from '@/components/Sections/SectionCapabilities'
@@ -22,12 +23,15 @@ export default async function Home({ params: { lng } }: Params) {
     <>
       <Header data={navbarInfo?.navbar} locale={lng} />
       {mainPageData?.mainPage ? (
-        <main>
-          <SectionIntroduction mainPageContent={mainPageData?.mainPage} />
-          <SectionSpecialities mainPageContent={mainPageData?.mainPage} />
-          <SectionCapabilities mainPageContent={mainPageData?.mainPage} />
-          <SectionAbout mainPageContent={mainPageData?.mainPage} />
-        </main>
+        <>
+          <main>
+            <SectionIntroduction mainPageContent={mainPageData?.mainPage} />
+            <SectionSpecialities mainPageContent={mainPageData?.mainPage} />
+            <SectionCapabilities mainPageContent={mainPageData?.mainPage} />
+            <SectionAbout mainPageContent={mainPageData?.mainPage} />
+          </main>
+          <Footer mainPageContent={mainPageData?.mainPage} />
+        </>
       ) : null}
     </>
   )

@@ -51,6 +51,7 @@ export type About = {
 export type MainPageInfo = {
   title: string
   name: string
+  location: string
   career: string
   resumeText: string
   resumeUrl: string

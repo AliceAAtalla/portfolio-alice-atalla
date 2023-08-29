@@ -17,6 +17,7 @@ export const getMainPageData = async (
           }
         }
         title
+        location
         name
         career
         resumeUrl
