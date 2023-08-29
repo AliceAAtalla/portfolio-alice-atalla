@@ -38,6 +38,16 @@ export type Specialties = {
   description: string
 }
 
+export type About = {
+  title: string
+  text: {
+    raw: RichTextContent
+  }
+  image: {
+    url: string
+  }
+}
+
 export type MainPageInfo = {
   title: string
   name: string
@@ -59,6 +69,7 @@ export type MainPageInfo = {
   specialties: [Specialties]
   capabilitiesTitle: string
   capabilities: [Capabilities]
+  about: About
 }
 
 export type MainPageData = {

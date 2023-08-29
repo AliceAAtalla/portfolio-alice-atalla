@@ -7,6 +7,15 @@ export const getMainPageData = async (
   const query = `
     query MyQuery {
       mainPage(where: {id: "clkefdb4a29su0blwzxkbwgx5"}, locales: ${locale}) {
+        about {
+          title
+          text {
+            raw
+          }
+          image {
+            url
+          }
+        }
         title
         name
         career
@@ -42,6 +51,7 @@ export const getMainPageData = async (
           title
           description
         }
+
       }
     }
   `
